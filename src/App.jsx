@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const res = await fetch("http://localhost:3000/Tasks");
+        const res = await fetch("/data/datadummy.json");
         const data = await res.json();
         setTasks(data);
         setOriginalTasks(data);
