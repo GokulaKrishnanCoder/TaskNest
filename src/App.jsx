@@ -1,5 +1,4 @@
-import { useState, useEffect, use } from "react";
-import "./App.css";
+import { useState, useEffect } from "react";
 import Navbar from "./Components/Navbar.jsx";
 import Cards from "./Components/Cards.jsx";
 import Addcards from "./Components/Addcards.jsx";
@@ -189,7 +188,7 @@ function App() {
   }
   // basename = "/TaskNest"
   return (
-    <Router >
+    <Router basename="/TaskNest" >
       <AppContent />  
     </Router>
   );
