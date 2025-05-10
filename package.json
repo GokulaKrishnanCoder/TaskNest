@@ -1,6 +1,6 @@
 {
-  "homepage": "https://GokulaKrishnanCoder.github.io/TaskNest",
-  "name": "taskmanager.json",
+  "homepage": "./",
+  "name": "taskmanager",
   "private": true,
   "version": "0.0.0",
   "type": "module",
