@@ -8,4 +8,5 @@ export default defineConfig({
   //   outDir: "build", // Ensure the build output is correct
   // },
   plugins: [react()],
+  base: './',
 });
