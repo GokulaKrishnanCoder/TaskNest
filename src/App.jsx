@@ -187,9 +187,9 @@ function App() {
       </>
     );
   }
-
+  // basename = "/TaskNest"
   return (
-    <Router basename = "/TaskNest">
+    <Router >
       <AppContent />  
     </Router>
   );
