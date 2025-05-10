@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Editcards from "./Editcards";
+
 function Cards(p) {
   function handleDelete() {
     p.onDeleteTask(p.id);
@@ -41,7 +41,7 @@ function Cards(p) {
     <>
       <div className="col">
         <div className="card h-100 position-relative border rounded p-2">
-          <div className="card-body d-flex flex-column  ">
+          <div className="card-body d-flex flex-column">
             <p
               className={`mark rounded p-2 align-items-top text-light`}
               style={{ backgroundColor: getcategorycolor(p.category) }}
@@ -53,21 +53,23 @@ function Cards(p) {
             <div className="mt-auto d-flex justify-content-between align-items-center">
               <div>
                 <button
-                  className="btn  me-2"
+                  className="btn me-2"
                   style={{ backgroundColor: "#FF8A8A", color: "white" }}
                   onClick={handleDelete}
                 >
                   Delete
                 </button>
                 <button
-                  className="btn "
+                  className="btn"
                   style={{ backgroundColor: "#FADA7A", color: "white" }}
                   onClick={handleEdit}
                 >
                   Edit
                 </button>
               </div>
-              <p className="text-secondary text-end mb-0">{p.due}</p>
+              <p className="text-secondary text-end mb-0">
+              {p.due instanceof Date ? p.due.toLocaleDateString() : p.due}
+                </p>
             </div>
           </div>
         </div>
@@ -75,4 +77,5 @@ function Cards(p) {
     </>
   );
 }
+
 export default Cards;

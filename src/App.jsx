@@ -6,6 +6,9 @@ import Addcards from "./Components/Addcards.jsx";
 import Editcards from "./Components/Editcards.jsx";
 import Calendarcard from "./Components/Calendarcard.jsx";
 import Completedcards from "./Components/Completedcards.jsx";
+import {db} from "./firebaseConfig.js";
+import { collection, getDocs } from "firebase/firestore";
+
 
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -15,37 +18,32 @@ function App() {
   const [tasks, setTasks] = useState([]);
   const [originalTasks, setOriginalTasks] = useState([]);
   const [completedTasks, setCompletedTasks] = useState([]);
+  
   useEffect(() => {
-    const fetchTasks = async () => {
-      try {
-        const res = await fetch("/data/datadummy.json");
-        const data = await res.json();
-        setTasks(data);
-        setOriginalTasks(data);
-        
-        localStorage.setItem("Tasks", JSON.stringify(data));
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    fetchTasks();
-  }, []);
-  useEffect(() => {
-    const storedTasks = localStorage.getItem("Tasks");
-    if (storedTasks) {
-      setTasks(JSON.parse(storedTasks));
-      setOriginalTasks(JSON.parse(storedTasks));
+  
+
+  const fetchTasks = async () => {
+    try {
+      const tasksRef = collection(db, "Tasks");
+      const querySnapshot = await getDocs(tasksRef);
+
+     const tasksArray = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+        ...doc.data(),
+          dueDate: doc.data().dueDate?.toDate(), // Convert Timestamp to readable date
+    }));
+      setTasks(tasksArray);
+      setOriginalTasks(tasksArray);
+    } catch (error) {
+      console.error("Error fetching tasks:", error);
     }
-  }, []);
+  };
 
-  useEffect(() => {
-    localStorage.setItem("Tasks", JSON.stringify(tasks));
-    console.log(tasks);
-  }, [tasks]);
-
+  fetchTasks();
+}, []);
   const addTask = (newTask, ind) => {
     setTasks((prevTasks) => [...prevTasks, newTask]);
-    // alert("Task added successfully");
+    
   };
 
   const deleteTask = (id) => {
@@ -111,8 +109,8 @@ function App() {
         onDeleteTask={deleteTask}
       />
     );})):(
-      <div className="text-center">
-        <h2>Loading,...</h2>
+      <div className="d-flex justify-content-center align-items-center flex-column">
+        <h4>OOPS! No Tasks Found 😔</h4>
         
       </div>
     );
@@ -173,15 +171,6 @@ function App() {
                       <NavigateButton />
                     </div>
                   </div>
-
-                  {/* <div className="col-lg-3 " style={{ top: "20px" }}>
-                    <Calendarcard onSelectDate={dateTask} />
-                  </div>
-                    <div className="col-lg-3" style={{ bottom: "20x" }}>
-                      <Completedcards completedCards={completedTasks} />
-                      <NavigateButton />
-                    </div>
-                   */}
                 </div>
               </div>
             }
@@ -200,8 +189,8 @@ function App() {
   }
 
   return (
-    <Router>
-      <AppContent />
+    <Router basename = "/TaskNest">
+      <AppContent />  
     </Router>
   );
 }
