@@ -1,0 +1,14 @@
+.floating-button {
+  border: none; /* Removes the border */
+  background: none; /* Removes the default button background */
+  padding: 0; /* Removes extra padding */
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px; /* Makes it look clickable */
+}
+
+.plus-icon {
+  width: 50px; /* Adjust size as needed */
+  height: 50px;
+}
