@@ -16,7 +16,7 @@ function Navbar() {
     e.preventDefault();
     
     const filteredTasks = tasks.filter((task) => {
-      return task.taskTitle.toLowerCase().includes(val.toLowerCase());
+      return originalTasks.taskTitle.toLowerCase().includes(val.toLowerCase());
     });
     
     console.log(filteredTasks);
