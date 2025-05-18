@@ -15,8 +15,8 @@ function Navbar() {
   function handleSearch(e) {
     e.preventDefault();
     
-    const filteredTasks = tasks.filter((task) => {
-      return originalTasks.taskTitle.toLowerCase().includes(val.toLowerCase());
+    const filteredTasks = originalTasks.filter((task) => {
+      return task.taskTitle.toLowerCase().includes(val.toLowerCase());
     });
     
     console.log(filteredTasks);
