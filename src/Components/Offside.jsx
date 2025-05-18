@@ -19,8 +19,11 @@ function Offside() {
   return (
     <>
       <div
-        className="align-items-center d-flex justify-content-center mt-2 ml-2 border border-2 rounded"
-        style={{ backgroundColor: "#FF9B17" }}
+        className="align-items-center d-flex justify-content-center  border border-radius-5 mt-2 ml-2"
+        style={{
+          
+          backgroundColor: "#FFC785",
+        }}
       >
         <Calendar onChange={handleselect} />
       </div>
