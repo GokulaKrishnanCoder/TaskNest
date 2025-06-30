@@ -1,12 +1,19 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+ TaskNest, a task management web app built entirely with React. This project helped me sharpen my front-end skills with a strong focus on component-based architecture, state management, and responsive UI design.
+ The aim was to create a clean, intuitive task manager that’s easy to use and fully responsive. Users can add, edit, complete, and delete tasks with a seamless user experience powered by modern frontend practices.
+* Tech Stack & Features
+  --React – Fast, component-driven development
+  -- JavaScript – Logic and interactivity
+  -- Bootstrap CSS – Clean and responsive design
+  -- Fully Responsive – Mobile-first design that scales beautifully
+  -- Deployed on Vercel – Fast, reliable hosting for a live demo
+* Key Functionalities
+ 🔹 Task CRUD – Add, update, complete, delete tasks easily
+ 🔹 Smooth Interactions – Transition and clean UI
+ 🔹 Component-Based Architecture – Reusable and scalable React components
+Building TaskNest was a fun and rewarding experience! It gave me practical experience with hooks, state lifting, and clean UI practices. If you're into front-end development or productivity tools, I'd love to hear your thoughts!
+🛠️ GitHub Repository: https://lnkd.in/gZGEiM9N
+ 🔗 Live Demo: https://lnkd.in/gG69ZVmJ
+ Demo video: https://drive.google.com/file/d/1KbF0prBYNz7fXoXNIGkSz8yDYRCZFqWa/view?usp=drive_link
