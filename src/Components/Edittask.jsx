@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTasks } from "./TasksContext";
+import "../App.css";
 
 import { useNavigate, useLocation } from "react-router-dom";
 function Edittask({ onUpdateTask }) {

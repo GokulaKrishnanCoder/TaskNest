@@ -3,6 +3,7 @@ import plus from "../assets/plus.png";
 import { useNavigate } from "react-router-dom";
 import CompletedTasks from "./CompletedTasks";
 import Offside from "./Offside";
+import "../App.css";
 function Content() {
   const navigate = useNavigate();
   return (

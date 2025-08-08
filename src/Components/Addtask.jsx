@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import { useTasks } from "./TasksContext";
+import "../App.css";
 
 function Addtask() {
   const { tasks,setTasks } = useTasks();
@@ -20,7 +21,7 @@ function Addtask() {
         [name]: value,
       };
     });
-  }
+  } 
   const navigate = useNavigate();
 
   const handleSave = () => {

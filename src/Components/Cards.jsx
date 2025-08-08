@@ -2,6 +2,7 @@ import  { use, useEffect, useState } from "react";
 
 import Task from "./Task";
 import { useTasks } from "./TasksContext";
+import "../App.css";
 
 function Cards() {
   const {tasks, setTasks,originalTasks,setCompletedTasks} = useTasks();

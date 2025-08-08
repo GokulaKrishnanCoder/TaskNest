@@ -2,6 +2,7 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import React, { useState } from "react";
 import { useTasks } from "./TasksContext";
+import "../App.css";
 function Offside() {
 
   const { originalTasks,setTasks } = useTasks();
